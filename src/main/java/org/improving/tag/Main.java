@@ -3,29 +3,15 @@ package org.improving.tag;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        boolean loop = true;
-        while (loop) {
-            System.out.print("> ");
-            String input = scanner.nextLine();
-            input = input.trim();
-            if (input.equals("look")) {
-                input.trim();
-                System.out.println("You look around.");
-            } else if (input.equals("inventory")) {
-                System.out.println("You are carrying nothing.");
-            } else if (input.equals("dance")) {
-                System.out.println("You dance around.");
-            } else if (input.equals("jump")) {
-                System.out.println("You jump in the air.");
-            } else if (input.equals("exit")) {
-                System.out.println("Goodbye.");
-                loop = false;
-            } else {
-                System.out.println("Huh? I don't understand.");
-            }
-        }
+    public static void main(String[] args)  {
+        System.out.println("Start of Main");
+        Game game = new Game (100,18);
+        System.out.println("Declared game");
+       game.run();
+       System.out.println("After Run()");
 
+        long elapsedTicks = game.getStartTime().getTime() - game.getEndTime().getTime();
+        double elapsedSeconds = elapsedTicks/1000.00;
+        System.out.println("We were running for +" + elapsedSeconds + "s");
     }
 }
