@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)  {
         System.out.println("Start of Main");
-        Game game = new Game (100,18);
+        Game game = new Game();
         System.out.println("Declared game");
        game.run();
        System.out.println("After Run()");
