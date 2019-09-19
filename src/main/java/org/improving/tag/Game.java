@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class Game {
     private Date startTime;
     private Date endTime;
-    private BaseEmoteCommand[] commands;
+    private Command[] commands;
 
     public Game() {
-        commands = new BaseEmoteCommand[]{
+        commands = new Command[]{
                 new LookCommand(),
                 new DanceCommand(),
                 new InventoryCommand(),
@@ -42,7 +42,7 @@ public class Game {
         while (loop) {
             System.out.print("> ");
             String input = scanner.nextLine();
-            BaseEmoteCommand validCommand = getValidCommand(input);
+            Command validCommand = getValidCommand(input);
             if (null != validCommand) {
                 validCommand.execute(input);
             } else if (input.equals("exit")) {
@@ -55,9 +55,8 @@ public class Game {
 
         }
     }
-    private BaseEmoteCommand getValidCommand(String input) {
-        BaseEmoteCommand validCommand = null;
-        for (BaseEmoteCommand command : commands) {
+    private Command getValidCommand(String input) {
+        for ( Command command : commands) {
             if (command.isValid(input)) {
                 return command;
             }
