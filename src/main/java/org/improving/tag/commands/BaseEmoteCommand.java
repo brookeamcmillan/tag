@@ -1,5 +1,6 @@
 package org.improving.tag.commands;
 
+import org.improving.tag.Game;
 import org.improving.tag.InputOutput;
 
 public abstract class BaseEmoteCommand implements Command {
@@ -14,12 +15,12 @@ public abstract class BaseEmoteCommand implements Command {
     }
 
     @Override
-    public boolean isValid(String input) {
+    public boolean isValid(String input, Game game) {
         return (input == null ? "" : input)
                 .trim().equalsIgnoreCase(cmdText);
     }
     @Override
-    public void execute(String input) {
+    public void execute(String input, Game game) {
         io.displayText(cmdResponse);
     }
 }

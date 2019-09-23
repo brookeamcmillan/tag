@@ -20,7 +20,7 @@ public class EatCommandTests {
     @Test
     public  void execute_should_return__phrase() {
         //Act
-        target.execute(null);
+        target.execute(null, null);
 
         //Assert
         assertEquals("You're back to full health.", io.lastText);
@@ -29,7 +29,7 @@ public class EatCommandTests {
     @Test
     public void isValid_should_be_true_when_input_is_eat() {
         // Act
-        var result = target.isValid( "eat");
+        var result = target.isValid( "eat", null);
 
         // Assert
         assertTrue(result);
@@ -38,7 +38,7 @@ public class EatCommandTests {
     @Test
     public void isValid_should_be_true_when_input_is_eat_with_spaces() {
         // Act
-        var result = target.isValid( "eat");
+        var result = target.isValid( "eat", null);
 
         // Assert
         assertTrue(result);
@@ -47,7 +47,7 @@ public class EatCommandTests {
     @Test
     public void isValid_should_be_true_when_input_is_eat_with_caps() {
         // Act
-        var result = target.isValid( "eAt");
+        var result = target.isValid( "eAt", null);
 
         // Assert
         assertTrue(result);
@@ -57,7 +57,7 @@ public class EatCommandTests {
     public void isValid_should_be_false_when_input_is_foobar() {
 
         // Act
-        var result = target.isValid( "foobar");
+        var result = target.isValid( "foobar", null);
 
         // Assert
         assertFalse(result);
@@ -67,7 +67,7 @@ public class EatCommandTests {
     public void isValid_should_be_false_when_input_is_null() {
 
         // Act
-        var result = target.isValid( null);
+        var result = target.isValid( null, null);
 
         // Assert
         assertFalse(result);
