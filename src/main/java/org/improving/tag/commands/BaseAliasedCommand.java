@@ -17,7 +17,6 @@ public abstract class BaseAliasedCommand implements Command {
     @Override
     public boolean isValid(String input, Game game) {
         var trimmedInput = input.trim();
-        return aliases.stream()
-                .anyMatch(trimmedInput::equalsIgnoreCase);
+        return aliases.stream().anyMatch(trimmedInput::equalsIgnoreCase);
     }
 }
