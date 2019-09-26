@@ -56,9 +56,13 @@ public class Game {
 
     public void run() {
         this.setStartTime(new Date());
-
         boolean loop = true;
+
+      //  io.displayPrompt("Choose one: " + "/n" + "New Game" + "/n" + "Load Game" );
+
         while (loop) {
+
+
            io.displayPrompt("> ");
             String input = io.recieveInput();
 
