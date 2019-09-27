@@ -93,6 +93,10 @@ public class Game {
         var tdh = new Location();
         tdh.setName("The Deathly Hallows");
         this.locationList.add(tdh);
+        var adv = new Adversary();
+        adv.setName("Sauron");
+        adv.setHitPoints(1000);
+        tdh.setAdversary(adv);
 
         var td = new Location();
         td.setName("The Dessert");

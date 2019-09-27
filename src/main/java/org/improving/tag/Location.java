@@ -8,6 +8,8 @@ public class Location {
     private String description = "";
     private List<String> tags = new ArrayList<>();
     private List<Exit> exits = new ArrayList<>();
+    private Adversary adversary;
+
 
     public String getName() {
         return name;
@@ -31,6 +33,13 @@ public class Location {
 
     public List<Exit> getExits() {
         return exits;
+    }
+
+    public Adversary getAdversary() { return adversary;
+    }
+
+    public void setAdversary(Adversary adversary) {
+        this.adversary = adversary;
     }
 
 }
